@@ -1,0 +1,94 @@
+@import "common";
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #f2f2f2;
+  overflow-y: scroll;
+}
+.code{
+  text-align: center;
+  padding: 0 10px;
+  margin: 15px 0;
+  img{
+    width: 150px;
+  }
+}
+.code-txt{
+  color: #c0392b;
+  margin-top: 10px;
+}
+.logo{
+  width:150px;
+}
+.header{
+  background-color: #fff;
+  padding: 10px;
+}
+.slogan{
+  text-align: right;
+  p{
+    margin-bottom: 5px;
+    font-size: 14px;
+    &:last-child{
+      color: #c0392b;
+      margin-bottom: 0;
+    }
+  }
+}
+.banner{
+ text-align: center;
+  margin-bottom: 20px;
+  img{
+    width: 90%;
+  }
+}
+/********************优惠券模态框*****************/
+.ticket-type{
+  margin-bottom: 5px;
+}
+.type-name{
+  font-size: 16px;
+  margin:0 0 3px 20px;
+}
+.ticket-list{
+  padding:0 10px;
+  .ticket-list-item{
+    padding:5px 5px 5px 0;
+    margin-bottom: 5px;
+    color: #555659;
+    background: url("../img/ticket_bg.png") 100% 100% no-repeat;
+    background-size: 100% 50px;
+    height:50px;
+
+    &:not(:last-child){
+      border-bottom: 1px solid #f1f1f1;
+    }
+    .ticket-name{
+      font-size: 14px;
+      text-align: center;
+      width:32%;
+      padding:5px;
+      color: #fff;
+      p{
+        word-break: break-all;
+        word-wrap: break-word;
+      }
+    }
+    .ticket-name,.ticket-limit{
+      display: inline-block;
+    }
+    .ticket-limit,.ticket-deadline{
+      text-align: right;
+    }
+  }
+}
+.disuse-coupon{
+  padding:10px 0 10px 20px;
+}
+.no-scroll{
+  height: 100%;
+  overflow: hidden;
+}

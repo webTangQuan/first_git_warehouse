@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>O米支付</title>
+    <link rel="stylesheet" href="css/attention.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="header flex flex-between">
+        <img src="img/Omi_logo_cn.png" class="logo"/>
+
+        <div class="slogan">
+            <p>简简单单支付</p>
+
+            <p>轻轻松松收单</p>
+
+            <p>关注我发现更多惊喜</p>
+        </div>
+    </div>
+    <div class="code">
+        <img src="img/qr_code.jpg"/>
+
+        <p class="code-txt">长按上图，弹出“识别二维码”后关注O米福利社</p>
+    </div>
+    <div class="banner">
+        <img src="img/banner.jpg"/>
+    </div>
+    <!--优惠券模态框，如果要显示优惠券给“modals” 这个div 添加‘show’这个class-->
+    <div class="modal" id="ticketModal">
+        <div class="flex flex-center flex-vertical">
+            <div class="close-box">
+                <span class="close" onclick="closeModal('ticketModal')"></span>
+                <span class="line"></span>
+            </div>
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <p class="modal-title">优惠券列表</p>
+                </div>
+                <div class="modal-body">
+                    <div class="ticket-type">
+                        <p class="type-name">现金券</p>
+                        <ul class="ticket-list">
+                            <li class="ticket-list-item flex flex-between">
+                                <div class="ticket-name">
+                                    <p class="">CASH</p>
+                                    <p class="ticket-amount">$100</p>
+                                </div>
+                                <div class="ticket-limit">
+                                    <p class="limit-amount">满1000元可用</p>
+                                    <p class="ticket-deadline">
+                                        <span>有效期:</span>
+                                        <span class="time">2017年07月19日</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="ticket-list-item flex flex-between">
+                                <div class="ticket-name">
+                                    <p class="">CASH</p>
+                                    <p class="ticket-amount">$100</p>
+                                </div>
+                                <div class="ticket-limit">
+                                    <p class="limit-amount">满1000元可用</p>
+                                    <p class="ticket-deadline">
+                                        <span>有效期:</span>
+                                        <span class="time">2017年07月19日</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="ticket-list-item flex flex-between">
+                                <div class="ticket-name">
+                                    <p class="">CASH</p>
+                                    <p class="ticket-amount">$100</p>
+                                </div>
+                                <div class="ticket-limit">
+                                    <p class="limit-amount">满1000元可用</p>
+                                    <p class="ticket-deadline">
+                                        <span>有效期:</span>
+                                        <span class="time">2017年07月19日</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="ticket-list-item flex flex-between">
+                                <div class="ticket-name">
+                                    <p class="">CASH</p>
+                                    <p class="ticket-amount">$100</p>
+                                </div>
+                                <div class="ticket-limit">
+                                    <p class="limit-amount">满1000元可用</p>
+                                    <p class="ticket-deadline">
+                                        <span>有效期:</span>
+                                        <span class="time">2017年07月19日</span>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ticket-type">
+                        <p class="type-name">折扣券</p>
+                        <ul class="ticket-list">
+                            <li class="ticket-list-item flex flex-between">
+                                <div class="ticket-name">
+                                    <p class="">Discount</p>
+                                    <p class="ticket-percent">30%</p>
+                                </div>
+                                <div class="ticket-limit">
+                                    <p class="limit-amount">满1000元可用</p>
+                                    <p class="ticket-deadline">
+                                        <span>有效期:</span>
+                                        <span class="time">2017年07月19日</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="ticket-list-item flex flex-between">
+                                <div class="ticket-name">
+                                    <p class="">Discount</p>
+                                    <p class="ticket-percent">30%</p>
+                                </div>
+                                <div class="ticket-limit">
+                                    <p class="limit-amount">满1000元可用</p>
+                                    <p class="ticket-deadline">
+                                        <span>有效期:</span>
+                                        <span class="time">2017年07月19日</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="ticket-list-item flex flex-between">
+                                <div class="ticket-name">
+                                    <p class="">Discount</p>
+                                    <p class="ticket-percent">30%</p>
+                                </div>
+                                <div class="ticket-limit">
+                                    <p class="limit-amount">满1000元可用</p>
+                                    <p class="ticket-deadline">
+                                        <span>有效期:</span>
+                                        <span class="time">2017年07月19日</span>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/attention.js"></script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>O米支付</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="fixd-top container">
+    <header class="header">
+        <div class="flex flex-center user_pro">
+            <div class="user_head_pic">
+                <img src="img/user_img.png" class="head_img">
+            </div>
+            <p class="user_name">农夫山泉澳洲有限公司</p>
+        </div>
+    </header>
+
+    <section class="main clear">
+        <!--输入金额-->
+        <div class="input_amount">
+            <div class="flex flex-between">
+                <div class="nation flex flex-center">
+                    <img src="img/icon_CHN.png" class="flag_img">
+                </div>
+                <div class="input_money flex flex-right flex-align">
+                    <span class="dollar">￥</span>
+                    <span class="num" id="num">0</span>
+                </div>
+            </div>
+        </div>
+        <!--优惠券折扣等-->
+        <div class="other_amount">
+            <div class="flex flex-align">
+                <div class="other-list Agio">
+                    <div class="other-list-item flex flex-align">
+                        <div class="title agio-title flex flex-center flex-vertical">
+                            <img src="img/icon_ticket.png" class="icon">
+                            <p class="title_name">优惠券</p>
+                        </div>
+                        <div class="detail agio-detail flex flex-center flex-vertical">
+                            <!--<p class="discount">9.2折</p>
+                            <p class="fav">
+                                <span>优惠：$</span>
+                                <span id="discount_amount">12.4</span>
+                            </p>-->
+                            <p class="discount">无可用卷</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="other-list exchange_rate">
+                    <div class="other-list-item flex flex-align">
+                        <div class="title rate-title flex flex-center flex-vertical">
+                            <div class="flex flex-vertical flex-center">
+                                <img src="img/icon_rate.png" class="icon">
+                                <p class="title_name">汇率</p>
+                            </div>
+                        </div>
+                        <div class="detail rate-detail flex flex-center">
+                            <div class="exchange_amount">
+                                <p class="amount">1</p>
+                                <p class="coin_name">AUD</p>
+                            </div>
+                            <span class="approximate">≈</span>
+                            <div class="converted_amount">
+                                <p class="amount">5.1389</p>
+                                <p class="coin_name">RMB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--金额明细-->
+        <div class="detail_amount">
+            <div class="detail_type">
+                <div class="detail_group">
+                    <span>手续费率：</span>
+                    <span id="fee_rate">2.00%</span>
+                </div>
+                <div class="detail_group">
+                    <span>手续费金额：</span>
+                    <span id="fee_amount">$1.60</span>
+                </div>
+                <div class="detail_group">
+                    <span>合计人民币金额：</span>
+                    <span id="rmb_amount">755.5</span>
+                </div>
+            </div>
+            <div class="total_amount">
+                <span>合计金额(AUD)</span>
+                <span id="total" class="total">$128.15</span>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="footer fixd-bottom">
+    <div class="keyboard">
+        <table cellpadding="0" cellspacing="0" class="keyboard-table">
+            <tr>
+                <td ontouchstart="clickKeyboard(this)">7</td>
+                <td ontouchstart="clickKeyboard(this)">8</td>
+                <td ontouchstart="clickKeyboard(this)">9</td>
+                <td ontouchstart="clickKeyboard(this)">&larr;</td>
+            </tr>
+            <tr>
+                <td ontouchstart="clickKeyboard(this)">4</td>
+                <td ontouchstart="clickKeyboard(this)">5</td>
+                <td ontouchstart="clickKeyboard(this)">6</td>
+                <td class="message">
+                    <img src="img/icon_message.png" class="msg_img">
+                </td>
+            </tr>
+            <tr>
+                <td ontouchstart="clickKeyboard(this)">1</td>
+                <td ontouchstart="clickKeyboard(this)">2</td>
+                <td ontouchstart="clickKeyboard(this)">3</td>
+                <td rowspan="2" class="payment" onclick="location.href='attention.html'">支付</td>
+            </tr>
+            <tr>
+                <td colspan="2" ontouchstart="clickKeyboard(this)">0</td>
+                <td ontouchstart="clickKeyboard(this)">.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!--留言输入框-->
+<div class="modal" id="msgModal">
+    <div class="flex flex-center flex-vertical">
+        <div class="close-box">
+            <span class="close" onclick="closeModal('msgModal')"></span>
+            <span class="line"></span>
+        </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title">客户留言</p>
+            </div>
+            <div class="modal-body msg-modal-body">
+                <input type="text" name="userName" id="userName" class="user_form u_name" placeholder="请输入联系人">
+                <input type="text" name="userPhone" id="userPhone" class="user_form" placeholder="请输入联系方式">
+                <textarea name="message" id="message" cols="30" rows="6" class="msg-input" placeholder="请输入您的留言"></textarea>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-sure">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--优惠券输入框-->
+<div class="modal" id="ticketModal">
+    <div class="flex flex-center flex-vertical">
+        <div class="close-box">
+            <span class="close" onclick="closeModal('ticketModal')"></span>
+            <span class="line"></span>
+        </div>
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <p class="modal-title">优惠券列表</p>
+            </div>
+            <div class="modal-body">
+                <div class="ticket-type">
+                    <p class="type-name">现金券</p>
+                    <ul class="ticket-list">
+                        <li class="ticket-list-item flex flex-between">
+                            <div class="ticket-name">
+                                <p class="">CASH</p>
+                                <p class="ticket-amount">$100</p>
+                            </div>
+                            <div class="ticket-limit">
+                                <p class="limit-amount">满1000元可用</p>
+                                <p class="ticket-deadline">
+                                    <span>有效期:</span>
+                                    <span class="time">2017年07月19日</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="ticket-list-item flex flex-between">
+                            <div class="ticket-name">
+                                <p class="">CASH</p>
+                                <p class="ticket-amount">$100</p>
+                            </div>
+                            <div class="ticket-limit">
+                                <p class="limit-amount">满1000元可用</p>
+                                <p class="ticket-deadline">
+                                    <span>有效期:</span>
+                                    <span class="time">2017年07月19日</span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="ticket-type">
+                    <p class="type-name">折扣券</p>
+                    <ul class="ticket-list">
+                        <li class="ticket-list-item flex flex-between">
+                            <div class="ticket-name">
+                                <p class="">Discount</p>
+                                <p class="ticket-percent">30%</p>
+                            </div>
+                            <div class="ticket-limit">
+                                <p class="limit-amount">满1000元可用</p>
+                                <p class="ticket-deadline">
+                                    <span>有效期:</span>
+                                    <span class="time">2017年07月19日</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="ticket-list-item flex flex-between">
+                            <div class="ticket-name">
+                                <p class="">Discount</p>
+                                <p class="ticket-percent">30%</p>
+                            </div>
+                            <div class="ticket-limit">
+                                <p class="limit-amount">满1000元可用</p>
+                                <p class="ticket-deadline">
+                                    <span>有效期:</span>
+                                    <span class="time">2017年07月19日</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="ticket-list-item flex flex-between">
+                            <div class="ticket-name">
+                                <p class="">Discount</p>
+                                <p class="ticket-percent">30%</p>
+                            </div>
+                            <div class="ticket-limit">
+                                <p class="limit-amount">满1000元可用</p>
+                                <p class="ticket-deadline">
+                                    <span>有效期:</span>
+                                    <span class="time">2017年07月19日</span>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p class="disuse-coupon">不使用优惠券</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

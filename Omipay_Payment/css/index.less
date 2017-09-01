@@ -1,0 +1,272 @@
+@import "common";
+
+.container {
+  background-color: #f2f2f2;
+}
+
+.header {
+  background: url("../img/s_line_h.png") bottom center no-repeat;
+  background-size: 100%;
+  padding: 20px 0;
+}
+
+.user_pro {
+  width: 86%;
+  margin: 0 auto;
+}
+
+.user_head_pic {
+  margin-right: 10px;
+  .head_img {
+    height:40px;
+  }
+}
+
+.user_name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/****************主体*************/
+.main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.input_amount, .other_amount, .detail_amount {
+  margin-bottom: 10px;
+}
+
+.input_amount {
+  border: 1px solid #B2BCA7;
+}
+
+.nation, .input_money {
+  height: 70px;
+}
+
+.nation {
+  width: 35%;
+  overflow: hidden;
+  border-right: 1px solid #B2BCA7;
+  text-align: center;
+}
+
+.flag_img {
+  width: 80px;
+}
+
+.input_money {
+  width: 65%;
+  text-align: right;
+  font-size: 28px;
+  line-height: 70px;
+  padding:0 10px;
+  color: #000;
+  overflow: hidden;
+  .num{
+    margin-left: 0.5rem;
+  }
+}
+
+.other-list {
+  width: 50%;
+  border: 1px solid #B2BCA7;
+  height: 60px;
+  .title {
+    background-color: #BAC4CC;
+    width: 38%;
+    padding: 7px 0;
+  }
+  .title, .detail {
+    height: 58px;
+  }
+}
+
+.detail {
+  width: 62%;
+  text-align: center;
+  padding: 5px;
+}
+
+.icon {
+  width: 22px;
+  margin-bottom: 5px;
+}
+
+.Agio {
+  margin-right: 5px;
+}
+
+.discount {
+  font-size: 20px;
+}
+
+.approximate {
+  margin: 0 5px;
+}
+
+.exchange_amount, .converted_amount {
+  text-align: left;
+  .amount {
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+}
+
+.detail_amount {
+  float: right;
+  text-align: right;
+}
+
+.detail_type {
+  color: #6d7e8c;
+  font-size: 14px;
+  .detail_group {
+    margin-bottom: 5px;
+  }
+}
+
+.total_amount {
+  font-size: 16px;
+  .total {
+    color: #4A6BCE;
+    margin-left: 20px;
+  }
+}
+
+/**********模拟键盘footer*********/
+.keyboard {
+  background: url("../img/keycell_bg.png") 100% 100% no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.keyboard-table {
+  width: 100%;
+  height: 100%;
+  font-size: 26px;
+  td {
+    width: 25%;
+    height: 25%;
+    text-align: center;
+    border:1px solid transparent;
+    border-top-color: #454748;
+    border-bottom-color: #1e2022;
+    border-left-color: #454748;
+    border-right-color: #1e2022;
+    &:active{
+      background-color: #676767;
+    }
+  }
+  .message {
+    background-color:#363a43;
+    &:active{
+      background-color: #363a43;
+    }
+    .msg_img {
+      width: 30px;
+      vertical-align: middle;
+    }
+  }
+  .payment {
+    background-color: #FF4F49;
+    &:active{
+      background-color: #ea402f;
+    }
+  }
+}
+
+
+/*********modal弹出框**********/
+.msg-input,.btn-sure,.modal-footer,.user_form{
+  background-color: #fff;
+}
+.msg-modal-body{
+  text-align: center;
+}
+.msg-input,.user_form{
+  width:96%;
+  padding:5px;
+}
+.user_form{
+  margin-bottom: 5px;
+}
+.btn-sure{
+  height:40px;
+  width:100%;
+  color: #FF4F49;
+  font-size: 16px;
+}
+.ticket-type{
+  margin-bottom: 5px;
+}
+.type-name{
+  font-size: 16px;
+  margin:0 0 3px 20px;
+}
+.ticket-list{
+  padding:0 10px;
+  .ticket-list-item{
+    padding:5px 5px 5px 0;
+    margin-bottom: 5px;
+    color: #555659;
+    background: url("../img/ticket_bg.png") 100% 100% no-repeat;
+    background-size: 100% 50px;
+    height:50px;
+
+    &:not(:last-child){
+      border-bottom: 1px solid #f1f1f1;
+    }
+    .ticket-name{
+      font-size: 14px;
+      text-align: center;
+      width:32%;
+      padding:5px;
+      color: #fff;
+      p{
+        word-break: break-all;
+        word-wrap: break-word;
+      }
+    }
+    .ticket-name,.ticket-limit{
+      display: inline-block;
+    }
+    .ticket-limit,.ticket-deadline{
+      text-align: right;
+    }
+  }
+}
+.disuse-coupon{
+  padding:10px 0 10px 20px;
+}
+@media screen and (min-width: 320px) and (max-width: 374px){
+  .keyboard-table{
+    font-size: 24px;
+  }
+  .nation, .input_money {
+    height: 60px;
+  }
+  .flag_img{
+    width:70px;
+  }
+  .modal-body{
+    max-height: 255px;
+  }
+  .message {
+    .msg_img {
+      width: 18px;
+    }
+  }
+}
+@media screen and(min-width: 410px){
+  .detail_type{
+    font-size: 16px;
+  }
+  .total_amount{
+    font-size: 18px;
+  }
+  .keyboard-table{
+    font-size: 34px;
+  }
+}
